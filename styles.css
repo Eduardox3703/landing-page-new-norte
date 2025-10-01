@@ -54,6 +54,27 @@ body {
   margin: 0 auto;
   padding: 0 clamp(16px, 4vw, 24px);
   width: 100%;
+  
+
+}
+
+.dates-section-plataformas {
+
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+
+}
+
+
+
+.section-title-tiktok {
+  margin-top: clamp(40px, 6vw, 80px); /* Responsivo en lugar de fijo */
+  font-size: clamp(28px, 5vw, 56px);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: clamp(12px, 2vw, 16px);
+  letter-spacing: clamp(1px, 0.3vw, 2px);
+  padding: 0 var(--spacing-sm);
 }
 
 /* Imágenes responsivas */
@@ -771,10 +792,13 @@ body {
   font-size: clamp(12px, 2vw, 14px);
 }
 
-/* Masonry Grid Styles */
 .masonry-section {
   background-color: var(--color-bg);
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2xl) 0;
 }
 
 .masonry-section.masonry-alt {
@@ -787,8 +811,27 @@ body {
   grid-auto-rows: clamp(200px, 30vw, 280px);
   gap: clamp(16px, 3vw, 24px);
   grid-auto-flow: dense;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 24px);
+  justify-items: center; /* Centra los items dentro del grid */
+  place-items: center; /* Centra vertical y horizontalmente cada item */
 }
 
+/* Asegura que los items no se estiren de manera extraña */
+.masonry-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: var(--color-surface);
+  transition: var(--transition);
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  justify-self: stretch; /* Ocupa todo el espacio de la celda */
+  align-self: stretch;
+}
 /* Breakpoints específicos para masonry */
 @media (min-width: 1400px) {
   .masonry-grid {
