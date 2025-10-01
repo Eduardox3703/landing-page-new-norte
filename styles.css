@@ -64,9 +64,13 @@ body {
 }
 
 .hero-logo {
-  height: clamp(60px, 10vw, 80px);
+  height: clamp(80px, 12vw, 100px);
   width: auto;
   max-width: 100%;
+  margin-bottom: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-logo-image {
@@ -346,9 +350,11 @@ body {
 }
 
 .bio-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: clamp(16px, 3vw, 32px);
+  align-items: stretch; /* Cambiado de center a stretch */
+  width: 100%;
 }
 
 .stat-item {
@@ -358,6 +364,7 @@ body {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: var(--transition);
+  width: 100%; /* Asegura que ocupe todo el ancho */
 }
 
 .stat-item:hover {
@@ -405,11 +412,6 @@ body {
   box-shadow: 0 16px 48px rgba(0, 217, 255, 0.2);
 }
 
-.spotify-embed iframe {
-  border-radius: 8px;
-  width: 100%;
-  height: auto;
-}
 
 /* Videos Section - TikTok */
 .videos-tiktok-grid {
@@ -847,7 +849,7 @@ body {
   grid-column: span 2;
 }
 
-/* Desactivar spans en móvil */
+/* Desactivar spans en móvil
 @media (max-width: 639px) {
   .masonry-tall {
     grid-row: span 1 !important;
@@ -856,7 +858,7 @@ body {
   .masonry-wide {
     grid-column: span 1 !important;
   }
-}
+} */
 
 /* Limitar wide en tablets */
 @media (min-width: 640px) and (max-width: 1023px) {
@@ -1117,22 +1119,7 @@ body {
   }
 }
 
-/* Modo oscuro (respeto a preferencias del sistema) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0a0a0a;
-    --color-surface: #141414;
-  }
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-bg: #f5f5f5;
-    --color-surface: #ffffff;
-    --color-text: #0a0a0a;
-    --color-text-secondary: #4a4a4a;
-  }
-}
 
 /* Touch devices - áreas táctiles más grandes */
 @media (hover: none) and (pointer: coarse) {
