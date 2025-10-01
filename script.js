@@ -23,6 +23,27 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   })
 })
+// Scroll indicator click
+const scrollIndicator = document.querySelector('.scroll-indicator');
+if (scrollIndicator) {
+  scrollIndicator.addEventListener('click', () => {
+    // Encuentra la siguiente sección después del hero
+    const nextSection = document.querySelector('.section');
+    if (nextSection) {
+      const headerOffset = 80;
+      const elementPosition = nextSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+  
+  // Agregar cursor pointer para indicar que es clickeable
+  scrollIndicator.style.cursor = 'pointer';
+}
 
 // Header scroll effect
 const header = document.getElementById("header")
