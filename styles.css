@@ -396,10 +396,10 @@ body {
   width: 100%; /* Asegura que ocupe todo el ancho */
 }
 
-.stat-item:hover {
+/* .stat-item:hover {
   border-color: var(--color-accent);
   transform: translateY(-4px);
-}
+} */
 
 .stat-number {
   font-size: clamp(32px, 6vw, 48px);
