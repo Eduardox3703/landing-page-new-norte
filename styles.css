@@ -1331,7 +1331,7 @@ body {
 }
 
 .footer-title {
-  color: var(--color-accent);
+  color: white;
   font-size: clamp(16px, 2.5vw, 18px);
   font-weight: 600;
   margin-bottom: clamp(16px, 2vw, 20px);
